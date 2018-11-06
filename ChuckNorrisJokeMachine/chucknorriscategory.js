@@ -1,18 +1,38 @@
 $(document).ready(function(){
-    $("#clickbutton").click(function(){
-    
-        $.get("https://api.chucknorris.io/jokes/categories", function(data, status) {
-            var categories = $(data);
+          $.get("https://api.chucknorris.io/jokes/categories", function(data, status) {
+            var categories = data;
             var $dropdown = $("#myInput");
-            $.each(data, function() {
+            $.each(categories, function() {
             $dropdown.append($("<option />").val(this).text(this));
+            $("#clickbutton").click(function(){ 
             });
+ 
 
         });
     });
-});       
+});        
 
-      $("#image").hover(function(){ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*    $("#image").hover(function(){ 
         $("#image").animate({
             width: "200px",
             height: "116px"
@@ -30,6 +50,6 @@ $(document).ready(function(){
             width: "400px",
             height: "232px"
         });
-    });
+    }); */
 
     

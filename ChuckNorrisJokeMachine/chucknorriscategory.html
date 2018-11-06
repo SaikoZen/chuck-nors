@@ -12,21 +12,23 @@
 
 <div class="container-fluid text-center">
 
-    <input type="select" id="myInput" name="Categories:"/>
-
+    
         <form class="row offset-2 col-8">
             <img id="image" class="mt-2 mb-2 offset-3 col-6"src="chucknorris.png"></div>     
                 <div class="offset-3 col-6 alert alert-success" role="alert">
                     <h4 id="header" class="alert-heading">Chuck Norris Joke Machine!</h4>
-                        <p id="mainparagraph">Welcome to the very wild west home of Chuck Norris Jokes. If you need a joke, just hit the Chuck Norris Joke Button. Laughing is done at own risk.</p>
+                        <p id="maintext">Welcome to the very wild west home of Chuck Norris Jokes. For a categorized Chuck Norris joke, slect a catagory in dropdown=menu and then click the Chuck Norris Joke Button. Laughing is done at own risk.</p>
                         <hr>
-                        <p class="mb-0">Jokes sponsored by<mark>https://api.chucknorris.io/random</mark></p>
-                </div>     
-                        <button id="clickbutton" type="button" class="row offset-4 col-4 btn btn-outline-info btn-lg">Chuck Norris Joke Button</button>    
-                        
-                        <p id="data"></p>
-                        <p id="status"></p>    
-        </form>     
+                        <p class="mb-0">Jokes sponsored by<mark>https://api.chucknorris.io</mark></p>
+                </div>   
+                    <div class="form-group">  
+                         <select class="btn btn-outline-info row offset-3 col-2 form-control" name="categories" id="myInput"> 
+                        </select>
+                        <button id="clickbutton" type="button" class="form-control 
+                        row offset-1 col-3 btn btn-outline-info btn-lg">Chuck Norris Joke Button</button>    
+                        </div>
+                       
+                        </form>     
     </div> 
    
 
