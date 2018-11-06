@@ -1,31 +1,29 @@
-$(document).ready(function(){
-    $.get("https://api.chucknorris.io/jokes/categories", function(data, status) {
-        var categories = data;
-        var $dropdown = $("#myInput");
-            $.each(categories, function() {
-            $dropdown.append($("<option />").val(this).text(this));   
+$(document).ready(function(){ //  bind the ready function to the document's ready function //
+    $.get("https://api.chucknorris.io/jokes/categories", function(data, status) { // send a get request to fetch all categories and bind to new function to the callback event //
+        var categories = data; //  data is an array of categories, create a variable for categories and set its value to data // 
+        var $dropdown = $("#myInput"); // create a variable to store the dropdown element and set the variable value to the dropdown element with Id="#myInput" //
+            $.each(categories, function() { // call the iteration-function to iterate through the categories array //
+            $dropdown.append($("<option />").val(this).text(this));  //with each iteration of the categories add <option> element to the document and give each category a value and a text //  
                 
-        $("#clickbutton").click(function() {
-            var catSelect = $("#myInput").val();
-            var url = "https://api.chucknorris.io/jokes/random?" + catSelect;
+    });    
+        
+    $("#clickbutton").click(function() { // when the click button is triggered //
+        var catSelect = $("#myInput").val(); //create a variable for the value of the category that has been selected //
+        var url = "https://api.chucknorris.io/jokes/random?" + catSelect;  // create a variable for a url and adding the required catSelect value to complete the url //
 
-            alert(catSelect);
-            alert(url);
- 
-        if (catSelect == "") {
-            alert("Select a Chuck Norris Joke category for a categorized Chuck Norris Joke.");   
-            }  
-
-            /* else {   */
-            /* var catJoke = data.value; */
-            /* $.get(url, function(data)) { */
-            /*    alert(catJoke); */
-            /* } */
-
-            /* } */
+        if (catSelect == "") { // passing a codition for checking if a category has been selected by the user //
+            alert('Select a category for a random categorized Chuck Noriis Joke'); // if the condtion is true then alert user to make a category selection //
+        }
+        else { // calling else function for if the condition not true, the following code will be executed //
+            $.get(url, function(data){ // making a get request with url varaible containing the catSelect and to fetch and bind to a new function //           var newJoke = data.value;
+                var newJoke = data.value; // data is a string with value creat a vairable to store data value //
+                alert(newJoke); // create a alert notification containing the data value received from request //
             
-        }) 
-        });     
+            })
+        }
+
+            });
+
     });                   
 });
 
