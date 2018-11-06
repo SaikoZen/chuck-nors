@@ -1,16 +1,35 @@
 $(document).ready(function(){
-          $.get("https://api.chucknorris.io/jokes/categories", function(data, status) {
-            var categories = data;
-            var $dropdown = $("#myInput");
+    $.get("https://api.chucknorris.io/jokes/categories", function(data, status) {
+        var categories = data;
+        var $dropdown = $("#myInput");
             $.each(categories, function() {
-            $dropdown.append($("<option />").val(this).text(this));
-            $("#clickbutton").click(function(){ 
-            });
- 
+            $dropdown.append($("<option />").val(this).text(this));   
+                
+        $("#clickbutton").click(function() {
+            var catSelect = $("#myInput").val();
+            var url = "https://api.chucknorris.io/jokes/random?" + catSelect;
 
-        });
-    });
-});        
+            alert(catSelect);
+            alert(url);
+ 
+        if (catSelect == "") {
+            alert("Select a Chuck Norris Joke category for a categorized Chuck Norris Joke.");   
+            }  
+
+            /* else {   */
+            /* var catJoke = data.value; */
+            /* $.get(url, function(data)) { */
+            /*    alert(catJoke); */
+            /* } */
+
+            /* } */
+            
+        }) 
+        });     
+    });                   
+});
+
+        
 
 
 
