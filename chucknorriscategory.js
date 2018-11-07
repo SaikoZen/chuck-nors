@@ -30,8 +30,13 @@ $(document).ready(function(){           //  bind the ready function to the docum
     }) 
 
     $("#target").keypress(function(){
-        var target = $("#target");
-        console.log(target);
+        var target = $("#target").val();
+        var charLength = $("#target").val().length;
+        if (charLength <= 3 ){
+        
+            
+
+        }
     })
                        
 });
