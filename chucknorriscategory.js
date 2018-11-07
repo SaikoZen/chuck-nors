@@ -4,7 +4,7 @@ $(document).ready(function(){           //  bind the ready function to the docum
         var $dropdown = $("#myInput");          // create a variable to store the dropdown element and set the variable value to the dropdown element with Id="#myInput" 
         
         $.each(data, function() {           // call the iteration-function to iterate through the categories array 
-        $dropdown.append($("<option />").val(this).text(this));              //with each iteration of the categories add <option> element to the document and give each category a value and a text //        
+            $dropdown.append($("<option />").val(this).text(this));              //with each iteration of the categories add <option> element to the document and give each category a value and a text //        
         })    
     });   
 
@@ -19,16 +19,16 @@ $(document).ready(function(){           //  bind the ready function to the docum
         }
         else {          // calling else function for if the condition not true, the following code will be executed 
         }
-    })       
+         
            
-    $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
+        $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
         var joke = data.value;          // set a varaible to store value for #maintext 
                               
-        $("#maintext").html(joke);          // displaying joke in #maintext with html function   
+            $("#maintext").html(joke);          // displaying joke in #maintext with html function   
 
 
-        })
-    
+            })
+        }) 
                        
 });
 
