@@ -34,15 +34,17 @@ $(document).ready(function(){           //  bind the ready function to the docum
         var charLength = target.length;
         var url = "https://api.chucknorris.io/jokes/search?query=" + target;
       
+    })    
+        
         $.get(url, function(data){
             var query = data.value;
             alert(query);        
-    })
+        })
        
                 
                
             
-    })
+   
                        
 });
 
