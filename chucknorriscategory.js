@@ -31,15 +31,40 @@ $(document).ready(function(){           //  bind the ready function to the docum
 
     $("#target").keypress(function(){
         var target = $("#target").val();
-        var charLength = $("#target").val().length;
-        if (charLength <= 3 ){
-        
+        var charLength = target.length;
+        var url = "https://api.chucknorris.io/jokes/search?query=" + target;
+      
+        $.get(url, function(data){
+            var query = data.value;
+            alert(query);        
+    })
+       
+                
+               
             
-
-        }
     })
                        
 });
+
+  
+    // if (charLength <= 3 ){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
