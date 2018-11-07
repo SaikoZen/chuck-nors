@@ -26,9 +26,12 @@ $(document).ready(function(){           //  bind the ready function to the docum
                               
             $("#maintext").html(joke);          // displaying joke in #maintext with html function   
 
-
         })
     }) 
+
+    $("#target").keypress(function(){
+
+    })
                        
 });
 
