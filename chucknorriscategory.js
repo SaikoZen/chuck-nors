@@ -19,16 +19,16 @@ $(document).ready(function(){           //  bind the ready function to the docum
         }
         else {          // calling else function for if the condition not true, the following code will be executed 
         }
+    })       
            
-           
-        $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
-            var joke = data.value;          // set a varaible to store value for #maintext 
+    $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
+        var joke = data.value;          // set a varaible to store value for #maintext 
                               
-            $("#maintext").html(joke);          // displaying joke in #maintext with html function   
+        $("#maintext").html(joke);          // displaying joke in #maintext with html function   
 
 
         })
-    })
+    
                        
 });
 
