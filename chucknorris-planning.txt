@@ -1,0 +1,46 @@
+Chuck Norris Joking App:
+
+1. Interface:
+	button
+	dropdown
+	output
+	
+2.	"https://api.chucknorris.io/"
+	"https://api.chucknorris.io/jokes/Random"
+	"https://api.chucknorris.io/jokes/categories"
+
+3. Process:
+
+	1. When button clicked (Id="clickbtn")
+	2. send $get-request for category-listing
+	3. receive data(category-listing) into a variable
+	4. add arrays to dropdown menu
+	
+	5. when category is selected
+
+	6. check if category-value == "", if true, send alert
+
+	7. if false, add the slected category-value to category-joke-url 
+	
+	10. post $.get-request
+
+	10. receive data.value response in a variable.
+
+	11. display variable in alert-popup-message. 
+ 
+		if (categorySelected == "") {
+		   alert("Select a category for categorized ChuckNorris Jokes");
+		} else {
+		   var url = $("https://api.chucknorris.io/jokes/" + categorySelected);
+		   
+		   $.get("url", function(data){
+			
+		   });	 
+
+	
+
+
+
+	 
+
+	

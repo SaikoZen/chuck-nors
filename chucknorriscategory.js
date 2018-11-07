@@ -29,13 +29,13 @@ $(document).ready(function(){           //  bind the ready function to the docum
         })
     }) 
 
-    $("#target").keypress(function(){
-        var target = $("#target").val();
-        var charLength = target.length;
-        var url = "https://api.chucknorris.io/jokes/search?query=" + target;
+    $("#target").keypress(function(){           // event is triggered with keypress
+        var target = $("#target").val();            // create a variable to store the values for keys presses
+        var charLength = target.length;             //  create a variable to record the length of keypress input
+        var url = "https://api.chucknorris.io/jokes/search?query=" + target;            // create variable for url with url-base and keyppress variable
       
-        $.get(url, function(data){
-            var query = data.value;
+        $.get(url, function(data){              // send get request to fetch data 
+            var query = data.value;             // create a variable to store the values of data received
             alert(query);        
         })
     })   
