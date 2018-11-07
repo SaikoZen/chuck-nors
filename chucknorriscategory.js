@@ -6,49 +6,39 @@ $(document).ready(function(){           //  bind the ready function to the docum
         $.each(data, function() {           // call the iteration-function to iterate through the categories array 
         $dropdown.append($("<option />").val(this).text(this));              //with each iteration of the categories add <option> element to the document and give each category a value and a text //        
         })    
-        
-        $("#clickbutton").click(function() {            // when the click button is triggered 
+    });   
+
+
+    $("#clickbutton").click(function() {            // when the click button is triggered 
             
-            var catSelect = $("#myInput").val();             //create a variable for the value of the category that has been selected 
-            var url = "https://api.chucknorris.io/jokes/random?category=" + catSelect;           // create a variable for a url and adding the required catSelect value to complete the url 
+        var catSelect = $("#myInput").val();             //create a variable for the value of the category that has been selected 
+        var url = "https://api.chucknorris.io/jokes/random?category=" + catSelect;           // create a variable for a url and adding the required catSelect value to complete the url 
             
-            if (catSelect == "") {          // passing a codition for checking if a category has been selected by the user 
-                alert('Select a category for a random categorized Chuck Norris Joke');           // if the condtion is true then alert user to make a category selection 
-            }
-            else {          // calling else function for if the condition not true, the following code will be executed 
-            }
+        if (catSelect == "") {          // passing a codition for checking if a category has been selected by the user 
+            $("#maintext").html('Select a category for a random categorized Chuck Norris Joke');           // if the condtion is true then alert user to make a category selection 
+        }
+        else {          // calling else function for if the condition not true, the following code will be executed 
+        }
            
            
-                $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
-                    alert(data.value);          // create a alert notification containing the data value received from request     
-                })
+        $.get(url, function(data){          // making a get request with url varaible containing the catSelect and to fetch and bind to a new function /          var newJoke = data.value;
+            var joke = data.value;          // set a varaible to store value for #maintext 
+                              
+            $("#maintext").html(joke);          // displaying joke in #maintext with html function   
+
+
             })
-    });                   
+        })
+                       
 });
 
-        
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*    $("#image").hover(function(){ 
+    /*  $("#image").hover(function(){ 
         $("#image").animate({
             width: "200px",
             height: "116px"
@@ -66,6 +56,6 @@ $(document).ready(function(){           //  bind the ready function to the docum
             width: "400px",
             height: "232px"
         });
-    }); */
+    });     */
 
     
