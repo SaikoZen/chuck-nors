@@ -38,16 +38,20 @@ $(document).ready(function(){           //  bind the ready function to the docum
         if (charLength <= minLength) {              // set condition for min length
             $.get(url, function(data){              // send get request to fetch data 
                 
-            var jokeValue = data.value;
-            var addTable = "<div>" + jokeValue + "</div>"       // 
-                alert(jokeValue);
-                
-            $("#searchresults").appendTo(addTable); 
+           // var jokeValue = data.value
+            
+           $.each( data, function (index, value) {
+               alert( index + ": " + value );
+           })
+
+            // var addTable = "<div>" + jokeValue + "</div>"       // 
+            // $("#searchresults").appendTo(addTable);
+
+           
+            
             })          
         }
         
-
-
 
     })   
                                       
