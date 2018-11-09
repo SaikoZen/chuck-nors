@@ -33,23 +33,29 @@ $(document).ready(function(){           //  bind the ready function to the docum
         var target = $("#target").val();            // create a variable to store the values for keys presses
         var charLength = target.length;             //  create a variable to record the length of keypress input
         var url = "https://api.chucknorris.io/jokes/search?query=" + target;            // create variable for url with url-base and keyppress variable
-        var minLength = /^[A-Za-z0-9]{4}$/;         // set variable with min characters     
+        var minLength = 3;         // set variable with min characters     
 
-        if (charLength >= minLength) {              // set condition for min length
+        if (charLength <= minLength) {              // set condition for min length
             $.get(url, function(data){              // send get request to fetch data 
-            var query = data.value;               // create a variable to store the values of data received
-            alert('succewss');
-        })          
+                
+            var jokeValue = data.value;
+            var addTable = "<div>" + jokeValue + "</div>"       // 
+                alert(jokeValue);
+                
+            $("#searchresults").appendTo(addTable); 
+            })          
         }
+        
+
+
+
     })   
                                       
 });
 
   
-    // if (charLength <= 3 ){
-
-
-
+    
+   
 
 
 
